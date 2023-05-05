@@ -11,7 +11,10 @@ export default function Index(props: IIndexProps) {
           <div>
             <span className="px-6 py-[5px] rounded-full text-red-600 bg-red-100 font-semibold text-xs flex align-center w-max cursor-pointer">
               More than faster
-              <img src="https://www.freepnglogos.com/images/strawberry-14949.html" />
+              <img
+                alt="sample"
+                src="https://www.freepnglogos.com/images/strawberry-14949.html"
+              />
             </span>
           </div>
           <div className="flex flex-col font-bold text-[60px]">

@@ -6,7 +6,7 @@ export default function BreadCrumb(props: IBreadCrumbProps) {
     <React.Fragment>
       <nav className="flex px-4 py-2">
         <ol className="flex overflow-hidden rounded-lg border border-gray-200 text-gray-600">
-          {props.routes.map((item: any, key: any) => (
+          {props.routes.map((item: any, key: number) => (
             <li className="flex items-center" key={key}>
               <NavLink to={item?.path}>
                 <div className="flex h-10 items-center bg-gray-100 px-4 transition hover:text-gray-900">
