@@ -15,10 +15,7 @@ export default function AppProvider(props: IAppProviderProps) {
   return (
     <ErrorBoundary>
       <Provider store={store}>
-        <PersistGate
-          loading={null}
-          persistor={persistor}
-        >
+        <PersistGate loading={null} persistor={persistor}>
           <HelmetProvider>
             <Helmet>
               <html lang={lang} />
