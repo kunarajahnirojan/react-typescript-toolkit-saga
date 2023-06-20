@@ -9,7 +9,7 @@ const Router = () => {
     <React.Fragment>
       <Routes>
         <Route path={routes.HOME} element={<Layout />}>
-          <Route index element={<LazyPage page="Home" />} />
+          <Route index element={<LazyPage page="Dashboard" />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />
