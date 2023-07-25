@@ -6,7 +6,7 @@ export interface IIndexProps {}
 export default function Index(props: IIndexProps) {
   return (
     <React.Fragment>
-      {/* <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-2 gap-8">
         <div className="py-24">
           <div>
             <span className="px-6 py-[5px] rounded-full text-red-600 bg-red-100 font-semibold text-xs flex align-center w-max cursor-pointer">
@@ -27,9 +27,7 @@ export default function Index(props: IIndexProps) {
           </div>
         </div>
         <div>Groceries delivered in as little as 2 hours</div>
-      </div> */}
-
-      <div>dfnioudbi</div>
+      </div>
     </React.Fragment>
   );
 }
