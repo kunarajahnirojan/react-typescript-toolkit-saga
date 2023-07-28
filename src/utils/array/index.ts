@@ -79,27 +79,27 @@ export function some<T>(arr: T[], fn: (item: T) => boolean): boolean {
   return arr.some(fn);
 }
 
-// export function includes<T>(arr: T[], item: T): boolean {
-//   return arr.includes(item);
-// }
+export function includes<T>(arr: T[], item: T): boolean {
+  return arr.includes(item);
+}
 
-// export function isEmpty<T>(arr: T[] | Record<string, T>): boolean {
-//   if (Array.isArray(arr)) {
-//     return arr.length === 0;
-//   }
-//   return Object.keys(arr).length === 0;
-// }
+export function isEmpty<T>(arr: T[] | Record<string, T>): boolean {
+  if (Array.isArray(arr)) {
+    return arr.length === 0;
+  }
+  return Object.keys(arr).length === 0;
+}
 
-// export function groupBy<T, K extends keyof any>(
-//   arr: T[],
-//   key: K
-// ): Record<string, T[]> {
-//   return arr.reduce((acc, item) => {
-//     const groupKey = item[key];
-//     acc[groupKey] = [...(acc[groupKey] || []), item];
-//     return acc;
-//   }, {} as Record<string, T[]>);
-// }
+export function groupBy<T, K extends keyof any>(
+  arr: T[],
+  key: K
+): Record<string, T[]> {
+  return arr.reduce((acc, item) => {
+    const groupKey = item[key];
+    acc[groupKey] = [...(acc[groupKey] || []), item];
+    return acc;
+  }, {} as Record<string, T[]>);
+}
 
 // export function uniq<T>(arr: T[]): T[] {
 //   return Array.from(new Set(arr));
