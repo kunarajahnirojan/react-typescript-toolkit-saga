@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ErrorBoundary } from 'components/base';
 import { lang, name } from 'config';
 // import store from 'store';
-import { Provider } from 'react-redux';
+// import { Provider } from 'react-redux';
 export interface IAppProviderProps {
   children: React.ReactNode;
 }
