@@ -321,25 +321,25 @@ export const getDatesBetween = (
   return dates;
 };
 
-// export const addTimeToDate = (
-//   date: Date | string | undefined,
-//   amount: number,
-//   unit: moment.unitOfTime.DurationConstructor
-// ): string => {
-//   return date
-//     ? moment(date).add(amount, unit).format('DD-MM-YYYY HH:mm:ss')
-//     : '----';
-// };
+export const addTimeToDate = (
+  date: Date | string | undefined,
+  amount: number,
+  unit: moment.unitOfTime.DurationConstructor
+): string => {
+  return date
+    ? moment(date).add(amount, unit).format('DD-MM-YYYY HH:mm:ss')
+    : '----';
+};
 
-// export const subtractTimeFromDate = (
-//   date: Date | string | undefined,
-//   amount: number,
-//   unit: moment.unitOfTime.DurationConstructor
-// ): string => {
-//   return date
-//     ? moment(date).subtract(amount, unit).format('DD-MM-YYYY HH:mm:ss')
-//     : '----';
-// };
+export const subtractTimeFromDate = (
+  date: Date | string | undefined,
+  amount: number,
+  unit: moment.unitOfTime.DurationConstructor
+): string => {
+  return date
+    ? moment(date).subtract(amount, unit).format('DD-MM-YYYY HH:mm:ss')
+    : '----';
+};
 
 // export const isWeekend = (date: Date | string): boolean => {
 //   return moment(date).isoWeekday() === 6 || moment(date).isoWeekday() === 7;
