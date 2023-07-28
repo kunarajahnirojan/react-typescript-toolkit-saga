@@ -254,17 +254,17 @@ export const formatDateTime = (date: Date | string | undefined): string => {
   return date ? moment(date).format('DD-MM-YYYY HH:mm:ss') : '----';
 };
 
-// export const formatTime = (date: Date | string | undefined): string => {
-//   return date ? moment(date).format('HH:mm:ss') : '----';
-// };
+export const formatTime = (date: Date | string | undefined): string => {
+  return date ? moment(date).format('HH:mm:ss') : '----';
+};
 
-// export const getCurrentDate = (): string => {
-//   return moment().format('DD-MM-YYYY');
-// };
+export const getCurrentDate = (): string => {
+  return moment().format('DD-MM-YYYY');
+};
 
-// export const getCurrentTime = (): string => {
-//   return moment().format('HH:mm:ss');
-// };
+export const getCurrentTime = (): string => {
+  return moment().format('HH:mm:ss');
+};
 
 // export const calculateAge = (birthdate: Date | string): number => {
 //   const birthMoment = moment(birthdate);
