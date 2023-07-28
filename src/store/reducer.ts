@@ -1,10 +1,19 @@
-// import { combineReducers } from '@reduxjs/toolkit';
-// import icecreamReducer from 'features/icecream/slice';
+import { combineReducers } from '@reduxjs/toolkit';
+import { persistReducer, PURGE } from 'redux-persist';
+import persistConfig from 'persist';
+import addonReducer from 'features/addons/addonSlice';
 
-// const rootReducers = combineReducers({
-//   icecream: icecreamReducer,
-// });
+const appReducer = combineReducers({
+  //   auth: persistReducer(persistConfig, authReducer),
+  addon: addonReducer,
+});
 
-// export default rootReducers;
+const rootReducer = (state: any, action: any) => {
+  if (action.type === PURGE) {
+    return appReducer(undefined, action);
+  }
 
-export {};
+  return appReducer(state, action);
+};
+
+export default rootReducer;
