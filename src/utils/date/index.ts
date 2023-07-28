@@ -266,15 +266,15 @@ export const getCurrentTime = (): string => {
   return moment().format('HH:mm:ss');
 };
 
-// export const calculateAge = (birthdate: Date | string): number => {
-//   const birthMoment = moment(birthdate);
-//   const now = moment();
-//   return now.diff(birthMoment, 'years');
-// };
+export const calculateAge = (birthdate: Date | string): number => {
+  const birthMoment = moment(birthdate);
+  const now = moment();
+  return now.diff(birthMoment, 'years');
+};
 
-// export const isValidDate = (date: any): boolean => {
-//   return moment(date, 'YYYY-MM-DD', true).isValid();
-// };
+export const isValidDate = (date: any): boolean => {
+  return moment(date, 'YYYY-MM-DD', true).isValid();
+};
 
 // export const convertTimestampToDate = (timestamp: number): string => {
 //   return moment.unix(timestamp).format('DD-MM-YYYY');
