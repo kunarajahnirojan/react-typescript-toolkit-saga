@@ -1,12 +1,10 @@
 import moment, { Moment } from 'moment';
 
-// /**
-//  * Return list days between 2 date.
-//  */
+/**
+ * Return list days between 2 date.
+ */
 export function daysFromTo(a: Moment | Date, b: Moment | Date) {
   const days = [];
-
-  // convert moment to time. moment().getTime()
   let localFrom = +a;
   const localTo = +b;
 
@@ -21,9 +19,9 @@ export function daysFromTo(a: Moment | Date, b: Moment | Date) {
   return days;
 }
 
-// /**
-//  * Return list days in month
-//  */
+/**
+ * Return list days in month
+ */
 export function daysInMonth(_date: string | Date | Moment | number) {
   const date = moment(_date).toDate();
 
@@ -40,67 +38,67 @@ export function daysInMonth(_date: string | Date | Moment | number) {
   return daysFromTo(firstDay, lastDay);
 }
 
-// /**
-//  * Get list days by month. Maybe has pre month, next month.
-//  */
-// export function getDaysByMonth(
-//   mDate: string | Date | Moment | number,
-//   firstDayOfWeek: number,
-//   showSixWeeks?: boolean
-// ) {
-//   const days = daysInMonth(mDate);
+/**
+ * Get list days by month. Maybe has pre month, next month.
+ */
+export function getDaysByMonth(
+  mDate: string | Date | Moment | number,
+  firstDayOfWeek: number,
+  showSixWeeks?: boolean
+) {
+  const days = daysInMonth(mDate);
 
-//   let before: Moment[] = [];
-//   let after: Moment[] = [];
-//   // calculate first day of week(ex: firstDayOfWeek > 7)
-//   const fdow = (7 + firstDayOfWeek) % 7 || 7;
+  let before: Moment[] = [];
+  let after: Moment[] = [];
+  // calculate first day of week(ex: firstDayOfWeek > 7)
+  const fdow = (7 + firstDayOfWeek) % 7 || 7;
 
-//   // calculate last day of week by first day of week
-//   const ldow = (fdow + 6) % 7;
+  // calculate last day of week by first day of week
+  const ldow = (fdow + 6) % 7;
 
-//   const from = moment(days[0]);
+  const from = moment(days[0]);
 
-//   const daysBefore = from.day();
+  const daysBefore = from.day();
 
-//   if (from.day() !== fdow) {
-//     // subtract if current date not equals first day of week
-//     from.add(-(from.day() + 7 - fdow) % 7, 'day');
-//   }
+  if (from.day() !== fdow) {
+    // subtract if current date not equals first day of week
+    from.add(-(from.day() + 7 - fdow) % 7, 'day');
+  }
 
-//   const to = moment(days[days.length - 1]);
+  const to = moment(days[days.length - 1]);
 
-//   const day = to.day();
+  const day = to.day();
 
-//   if (day !== ldow) {
-//     // add if lasted date not equals last day of week
-//     to.add((ldow + 7 - day) % 7, 'day');
-//   }
+  if (day !== ldow) {
+    // add if lasted date not equals last day of week
+    to.add((ldow + 7 - day) % 7, 'day');
+  }
 
-//   const daysForSixWeeks = (daysBefore + days.length) / 6 >= 6;
+  const daysForSixWeeks = (daysBefore + days.length) / 6 >= 6;
 
-//   // check size days pluss days before divide 6 enough or not 6 weeks
-//   if (showSixWeeks && !daysForSixWeeks) {
-//     to.add(7, 'day');
-//   }
+  // check size days pluss days before divide 6 enough or not 6 weeks
+  if (showSixWeeks && !daysForSixWeeks) {
+    to.add(7, 'day');
+  }
 
-//   if (from.isBefore(moment(days[0]), 'days')) {
-//     before = daysFromTo(from, days[0]);
-//   }
+  if (from.isBefore(moment(days[0]), 'days')) {
+    before = daysFromTo(from, days[0]);
+  }
 
-//   // eslint-disable-next-line no-constant-condition
-//   if ((to.isAfter(days[days.length - 1]), 'days')) {
-//     after = daysFromTo(days[days.length - 1], to);
-//   }
+  // eslint-disable-next-line no-constant-condition
+  if ((to.isAfter(days[days.length - 1]), 'days')) {
+    after = daysFromTo(days[days.length - 1], to);
+  }
 
-//   return before.concat(
-//     days.slice(before.length > 0 ? 1 : 0, days.length - 1),
-//     after
-//   );
-// }
+  return before.concat(
+    days.slice(before.length > 0 ? 1 : 0, days.length - 1),
+    after
+  );
+}
 
-// /**
-//  * Get time ago like facebook. (ex: a day ago).
-//  */
+/**
+ * Get time ago like facebook. (ex: a day ago).
+ */
 // export function getTimeDifference(date: Date | string): {
 //   count: number | null;
 //   tx: string;
