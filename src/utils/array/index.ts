@@ -41,19 +41,19 @@ export const getLastNElementsFromArray = <T>(arr: T[], n: number): T[] => {
   return arr.slice(Math.max(arr.length - n, 0));
 };
 
-// export const getArrayIntersection = <T>(arr1: T[], arr2: T[]): T[] => {
-//   return arr1.filter((item) => arr2.includes(item));
-// };
+export const getArrayIntersection = <T>(arr1: T[], arr2: T[]): T[] => {
+  return arr1.filter((item) => arr2.includes(item));
+};
 
-// export const containsSubstring = (str: string, substring: string): boolean => {
-//   return str.toLowerCase().includes(substring.toLowerCase());
-// };
+export const containsSubstring = (str: string, substring: string): boolean => {
+  return str.toLowerCase().includes(substring.toLowerCase());
+};
 
-// export const objectToArray = <T extends object>(
-//   obj: T
-// ): Array<[keyof T, T[keyof T]]> => {
-//   return Object.entries(obj) as Array<[keyof T, T[keyof T]]>;
-// };
+export const objectToArray = <T extends object>(
+  obj: T
+): Array<[keyof T, T[keyof T]]> => {
+  return Object.entries(obj) as Array<[keyof T, T[keyof T]]>;
+};
 
 // export function map<T, U>(arr: T[], fn: (item: T) => U): U[] {
 //   return arr.map(fn);
