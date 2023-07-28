@@ -32,6 +32,19 @@
         "tsx": "never"
       }
     ],
+
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["builtin", "external"],
+          "internal",
+          ["sibling", "parent", "index"]
+        ],
+        "newlines-between": "always"
+      }
+    ],
+
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-unused-vars": "error"
   },

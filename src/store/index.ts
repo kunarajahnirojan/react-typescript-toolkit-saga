@@ -10,8 +10,10 @@ import {
   REGISTER,
 } from 'redux-persist';
 import persistConfig from 'persist';
-import rootReducers from './reducer';
 import createSagaMiddleware from 'redux-saga';
+
+//
+import rootReducers from './reducer';
 import { rootSaga } from './saga';
 
 const sagaMiddleware = createSagaMiddleware();

@@ -1,8 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { persistReducer, PURGE } from 'redux-persist';
 import persistConfig from 'persist';
-
-//slices
 import authReducer from 'features/auth/authSlice';
 import addonReducer from 'features/addons/addonSlice';
 

@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { apiURL } from 'config';
-import { Post } from './types';
 import axios from 'axios';
+
+//
+import { Post } from './types';
 
 const POSTS_BASE_URL = `${apiURL}/posts`;
 
