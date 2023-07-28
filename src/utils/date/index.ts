@@ -357,6 +357,6 @@ export const getDateDifference = (
   return moment(endDate).diff(moment(startDate), unit);
 };
 
-// export const isBeforeToday = (date: Date | string): boolean => {
-//   return moment(date).isBefore(moment(), 'day');
-// };
+export const isBeforeToday = (date: Date | string): boolean => {
+  return moment(date).isBefore(moment(), 'day');
+};
