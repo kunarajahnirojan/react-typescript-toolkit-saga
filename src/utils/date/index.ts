@@ -175,10 +175,10 @@ export const dayBetweenRange = ({
   return mEndDate.diff(mStartDate, 'days') + 1;
 };
 
-// export const getDaysDifference = (date1: Date, date2: Date): number => {
-//   const timeDifference = date2.getTime() - date1.getTime();
-//   return Math.floor(timeDifference / (1000 * 3600 * 24));
-// };
+export const getDaysDifference = (date1: Date, date2: Date): number => {
+  const timeDifference = date2.getTime() - date1.getTime();
+  return Math.floor(timeDifference / (1000 * 3600 * 24));
+};
 
 // export const getCurrentDateTime = (
 //   format: string = 'YYYY-MM-DD HH:mm:ss'
