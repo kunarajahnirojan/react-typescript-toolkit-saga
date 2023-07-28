@@ -67,17 +67,17 @@ export function find<T>(arr: T[], fn: (item: T) => boolean): T | undefined {
   return arr.find(fn);
 }
 
-// export function forEach<T>(arr: T[], fn: (item: T) => void): void {
-//   arr.forEach(fn);
-// }
+export function forEach<T>(arr: T[], fn: (item: T) => void): void {
+  arr.forEach(fn);
+}
 
-// export function every<T>(arr: T[], fn: (item: T) => boolean): boolean {
-//   return arr.every(fn);
-// }
+export function every<T>(arr: T[], fn: (item: T) => boolean): boolean {
+  return arr.every(fn);
+}
 
-// export function some<T>(arr: T[], fn: (item: T) => boolean): boolean {
-//   return arr.some(fn);
-// }
+export function some<T>(arr: T[], fn: (item: T) => boolean): boolean {
+  return arr.some(fn);
+}
 
 // export function includes<T>(arr: T[], item: T): boolean {
 //   return arr.includes(item);
