@@ -90,38 +90,38 @@ export function isEmpty<T>(arr: T[] | Record<string, T>): boolean {
   return Object.keys(arr).length === 0;
 }
 
-export function groupBy<T, K extends keyof any>(
+export function groupBy<T, K extends keyof T>(
   arr: T[],
   key: K
 ): Record<string, T[]> {
   return arr.reduce((acc, item) => {
     const groupKey = item[key];
-    acc[groupKey] = [...(acc[groupKey] || []), item];
+    acc[String(groupKey)] = [...(acc[String(groupKey)] || []), item];
     return acc;
   }, {} as Record<string, T[]>);
 }
 
-// export function uniq<T>(arr: T[]): T[] {
-//   return Array.from(new Set(arr));
-// }
+export function uniq<T>(arr: T[]): T[] {
+  return Array.from(new Set(arr));
+}
 
-// export function range(start: number, end: number, step: number = 1): number[] {
-//   const arr = [];
-//   for (let i = start; i <= end; i += step) {
-//     arr.push(i);
-//   }
-//   return arr;
-// }
+export function range(start: number, end: number, step: number = 1): number[] {
+  const arr = [];
+  for (let i = start; i <= end; i += step) {
+    arr.push(i);
+  }
+  return arr;
+}
 
-// export function sortBy<T>(arr: T[], fn: (item: T) => any): T[] {
-//   return arr.slice().sort((a, b) => {
-//     const keyA = fn(a);
-//     const keyB = fn(b);
-//     if (keyA < keyB) return -1;
-//     if (keyA > keyB) return 1;
-//     return 0;
-//   });
-// }
+export function sortBy<T>(arr: T[], fn: (item: T) => any): T[] {
+  return arr.slice().sort((a, b) => {
+    const keyA = fn(a);
+    const keyB = fn(b);
+    if (keyA < keyB) return -1;
+    if (keyA > keyB) return 1;
+    return 0;
+  });
+}
 
 // export function flatten<T>(arr: (T | T[])[]): T[] {
 //   return arr.reduce((acc, val) => acc.concat(val), []);
