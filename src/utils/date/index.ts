@@ -212,12 +212,12 @@ export const parseStringToDate = (
   return moment(dateString, format);
 };
 
-// export const isDateBefore = (
-//   date: moment.Moment,
-//   otherDate: moment.Moment
-// ): boolean => {
-//   return date.isBefore(otherDate);
-// };
+export const isDateBefore = (
+  date: moment.Moment,
+  otherDate: moment.Moment
+): boolean => {
+  return date.isBefore(otherDate);
+};
 
 // export const isDateAfter = (
 //   date: moment.Moment,
