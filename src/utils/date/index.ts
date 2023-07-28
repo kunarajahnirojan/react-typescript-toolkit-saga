@@ -205,12 +205,12 @@ export const formatDateToString = (
   return date.format(format);
 };
 
-// export const parseStringToDate = (
-//   dateString: string,
-//   format: string
-// ): moment.Moment => {
-//   return moment(dateString, format);
-// };
+export const parseStringToDate = (
+  dateString: string,
+  format: string
+): moment.Moment => {
+  return moment(dateString, format);
+};
 
 // export const isDateBefore = (
 //   date: moment.Moment,
