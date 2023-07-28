@@ -198,12 +198,12 @@ export const subtractDaysFromDate = (
   return date.clone().subtract(days, 'days');
 };
 
-// export const formatDateToString = (
-//   date: moment.Moment,
-//   format: string
-// ): string => {
-//   return date.format(format);
-// };
+export const formatDateToString = (
+  date: moment.Moment,
+  format: string
+): string => {
+  return date.format(format);
+};
 
 // export const parseStringToDate = (
 //   dateString: string,
