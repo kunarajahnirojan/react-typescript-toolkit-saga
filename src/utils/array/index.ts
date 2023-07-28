@@ -124,7 +124,10 @@ export function sortBy<T>(arr: T[], fn: (item: T) => any): T[] {
 }
 
 export function flatten<T>(arr: (T | T[])[]): T[] {
-  return arr.reduce((acc, val) => acc.concat(val), []);
+  return arr.reduce<T[]>(
+    (acc, val) => acc.concat(val instanceof Array ? val : [val]),
+    []
+  );
 }
 
 export function omit<T extends object, K extends keyof T>(
