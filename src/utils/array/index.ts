@@ -2,9 +2,9 @@ export const isArrayEmpty = <T>(arr: T[]): boolean => {
   return arr.length === 0;
 };
 
-// export const flattenArray = <T>(arr: T[][]): T[] => {
-//   return [].concat(...arr);
-// };
+export const flattenArray = <T>(arr: T[][]): T[] => {
+  return [].concat(...arr);
+};
 
 // export const sumArrayElements = (arr: number[]): number => {
 //   return arr.reduce((sum, current) => sum + current, 0);
