@@ -180,11 +180,9 @@ export const getDaysDifference = (date1: Date, date2: Date): number => {
   return Math.floor(timeDifference / (1000 * 3600 * 24));
 };
 
-// export const getCurrentDateTime = (
-//   format: string = 'YYYY-MM-DD HH:mm:ss'
-// ): string => {
-//   return moment().format(format);
-// };
+export const getCurrentDateTime = (format = 'YYYY-MM-DD HH:mm:ss'): string => {
+  return moment().format(format);
+};
 
 // export const addDaysToDate = (
 //   date: moment.Moment,
