@@ -127,14 +127,14 @@ export function sortBy<T>(arr: T[], fn: (item: T) => any): T[] {
 //   return arr.reduce((acc, val) => acc.concat(val), []);
 // }
 
-// export function omit<T extends object, K extends keyof T>(
-//   obj: T,
-//   keys: K[]
-// ): Omit<T, K> {
-//   const omittedObj = { ...obj };
-//   keys.forEach((key) => delete omittedObj[key]);
-//   return omittedObj;
-// }
+export function omit<T extends object, K extends keyof T>(
+  obj: T,
+  keys: K[]
+): Omit<T, K> {
+  const omittedObj = { ...obj };
+  keys.forEach((key) => delete omittedObj[key]);
+  return omittedObj;
+}
 
 // export function pick<T extends object, K extends keyof T>(
 //   obj: T,
