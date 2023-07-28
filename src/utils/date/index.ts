@@ -191,12 +191,12 @@ export const addDaysToDate = (
   return date.clone().add(days, 'days');
 };
 
-// export const subtractDaysFromDate = (
-//   date: moment.Moment,
-//   days: number
-// ): moment.Moment => {
-//   return date.clone().subtract(days, 'days');
-// };
+export const subtractDaysFromDate = (
+  date: moment.Moment,
+  days: number
+): moment.Moment => {
+  return date.clone().subtract(days, 'days');
+};
 
 // export const formatDateToString = (
 //   date: moment.Moment,
