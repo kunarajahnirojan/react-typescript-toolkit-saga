@@ -242,17 +242,17 @@ export const getEndOfMonth = (date: moment.Moment): moment.Moment => {
   return date.clone().endOf('month');
 };
 
-// export const getStartOfYear = (date: moment.Moment): moment.Moment => {
-//   return date.clone().startOf('year');
-// };
+export const getStartOfYear = (date: moment.Moment): moment.Moment => {
+  return date.clone().startOf('year');
+};
 
-// export const getEndOfYear = (date: moment.Moment): moment.Moment => {
-//   return date.clone().endOf('year');
-// };
+export const getEndOfYear = (date: moment.Moment): moment.Moment => {
+  return date.clone().endOf('year');
+};
 
-// export const formatDateTime = (date: Date | string | undefined): string => {
-//   return date ? moment(date).format('DD-MM-YYYY HH:mm:ss') : '----';
-// };
+export const formatDateTime = (date: Date | string | undefined): string => {
+  return date ? moment(date).format('DD-MM-YYYY HH:mm:ss') : '----';
+};
 
 // export const formatTime = (date: Date | string | undefined): string => {
 //   return date ? moment(date).format('HH:mm:ss') : '----';
