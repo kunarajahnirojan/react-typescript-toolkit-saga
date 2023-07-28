@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import { IBreadCrumbProps } from 'models/components/breadcrumb';
+import { IBreadCrumbProps } from 'types/components/breadcrumb';
 export default function BreadCrumb(props: IBreadCrumbProps) {
   return (
     <React.Fragment>
