@@ -341,21 +341,21 @@ export const subtractTimeFromDate = (
     : '----';
 };
 
-// export const isWeekend = (date: Date | string): boolean => {
-//   return moment(date).isoWeekday() === 6 || moment(date).isoWeekday() === 7;
-// };
+export const isWeekend = (date: Date | string): boolean => {
+  return moment(date).isoWeekday() === 6 || moment(date).isoWeekday() === 7;
+};
 
-// export const isWeekday = (date: Date | string): boolean => {
-//   return moment(date).isoWeekday() >= 1 && moment(date).isoWeekday() <= 5;
-// };
+export const isWeekday = (date: Date | string): boolean => {
+  return moment(date).isoWeekday() >= 1 && moment(date).isoWeekday() <= 5;
+};
 
-// export const getDateDifference = (
-//   startDate: Date | string,
-//   endDate: Date | string,
-//   unit: moment.unitOfTime.Diff
-// ): number => {
-//   return moment(endDate).diff(moment(startDate), unit);
-// };
+export const getDateDifference = (
+  startDate: Date | string,
+  endDate: Date | string,
+  unit: moment.unitOfTime.Diff
+): number => {
+  return moment(endDate).diff(moment(startDate), unit);
+};
 
 // export const isBeforeToday = (date: Date | string): boolean => {
 //   return moment(date).isBefore(moment(), 'day');
