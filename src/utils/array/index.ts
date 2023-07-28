@@ -29,17 +29,17 @@ export const shuffleArray = <T>(arr: T[]): T[] => {
   return arrayCopy;
 };
 
-// export const removeDuplicatesFromArray = <T>(arr: T[]): T[] => {
-//   return Array.from(new Set(arr));
-// };
+export const removeDuplicatesFromArray = <T>(arr: T[]): T[] => {
+  return Array.from(new Set(arr));
+};
 
-// export const arrayContainsValue = <T>(arr: T[], value: T): boolean => {
-//   return arr.includes(value);
-// };
+export const arrayContainsValue = <T>(arr: T[], value: T): boolean => {
+  return arr.includes(value);
+};
 
-// export const getLastNElementsFromArray = <T>(arr: T[], n: number): T[] => {
-//   return arr.slice(Math.max(arr.length - n, 0));
-// };
+export const getLastNElementsFromArray = <T>(arr: T[], n: number): T[] => {
+  return arr.slice(Math.max(arr.length - n, 0));
+};
 
 // export const getArrayIntersection = <T>(arr1: T[], arr2: T[]): T[] => {
 //   return arr1.filter((item) => arr2.includes(item));
