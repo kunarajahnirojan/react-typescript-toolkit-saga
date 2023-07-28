@@ -219,20 +219,20 @@ export const isDateBefore = (
   return date.isBefore(otherDate);
 };
 
-// export const isDateAfter = (
-//   date: moment.Moment,
-//   otherDate: moment.Moment
-// ): boolean => {
-//   return date.isAfter(otherDate);
-// };
+export const isDateAfter = (
+  date: moment.Moment,
+  otherDate: moment.Moment
+): boolean => {
+  return date.isAfter(otherDate);
+};
 
-// export const getStartOfDay = (date: moment.Moment): moment.Moment => {
-//   return date.clone().startOf('day');
-// };
+export const getStartOfDay = (date: moment.Moment): moment.Moment => {
+  return date.clone().startOf('day');
+};
 
-// export const getEndOfDay = (date: moment.Moment): moment.Moment => {
-//   return date.clone().endOf('day');
-// };
+export const getEndOfDay = (date: moment.Moment): moment.Moment => {
+  return date.clone().endOf('day');
+};
 
 // export const getStartOfMonth = (date: moment.Moment): moment.Moment => {
 //   return date.clone().startOf('month');
