@@ -1,39 +1,38 @@
-// import axios, { AxiosInstance, AxiosRequestConfig, AxiosError } from 'axios';
-// import { apiURL } from 'config/env';
-// import store, { RootState } from 'path/to/your/redux/store';
-// import { accessTokenWithType } from '';
+// import axios, { AxiosRequestConfig } from 'axios';
+// import { GetState } from 'redux';
+// import { apiURL } from 'config';
+// import { accessTokenWithType } from 'selectors/auth';
 
-// interface CustomAxiosConfig extends Omit<AxiosRequestConfig, 'headers'> {
-//   useAuth?: boolean;
-// }
-
-// const instance: AxiosInstance = axios.create({
+// const instance = axios.create({
 //   baseURL: apiURL,
 //   headers: {
-//     Accept: 'application/json',
+//     Accept: 'text/json',
 //     'Content-Type': 'application/json',
 //     'Access-Control-Allow-Origin': '*',
 //   },
 // });
 
-// instance.interceptors.request.use(
-//   (config: CustomAxiosConfig) => {
-//     const { useAuth, ...restConfig } = config;
+// interface CustomAxiosConfig extends Omit<AxiosRequestConfig, 'headers'> {
+//   useAuth?: boolean;
+//   headers?: Record<string, string>;
+// }
 
-//     if (useAuth !== false) {
-//       const state: RootState = store.getState();
-//       restConfig.headers = {
-//         ...restConfig.headers,
-//         Authorization: accessTokenWithType(state),
-//       };
+// export function createAxios({ getState }: { getState: GetState }) {
+//   instance.interceptors.request.use(
+//     (config: any) => {
+//       const { useAuth, ...headers } = config.headers;
+
+//       if (useAuth !== false) {
+//         const state = getState();
+//         headers.Authorization = accessTokenWithType(state);
+//       }
+//       return { ...config, headers };
+//     },
+//     (error) => {
+//       return Promise.reject(error);
 //     }
-
-//     return restConfig;
-//   },
-//   (error: AxiosError) => {
-//     return Promise.reject(error);
-//   }
-// );
+//   );
+// }
 
 // export default instance;
 

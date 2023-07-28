@@ -10,7 +10,7 @@ function* fetchTitles() {
   try {
     const { data } = yield call(axios.get, 'title');
     yield put(loadTitleSuccess(data));
-  } catch (error) {
+  } catch (error: any) {
     yield put(loadTitleFail(error.message));
   }
 }
