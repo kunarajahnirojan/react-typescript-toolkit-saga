@@ -55,17 +55,17 @@ export const objectToArray = <T extends object>(
   return Object.entries(obj) as Array<[keyof T, T[keyof T]]>;
 };
 
-// export function map<T, U>(arr: T[], fn: (item: T) => U): U[] {
-//   return arr.map(fn);
-// }
+export function map<T, U>(arr: T[], fn: (item: T) => U): U[] {
+  return arr.map(fn);
+}
 
-// export function filter<T>(arr: T[], fn: (item: T) => boolean): T[] {
-//   return arr.filter(fn);
-// }
+export function filter<T>(arr: T[], fn: (item: T) => boolean): T[] {
+  return arr.filter(fn);
+}
 
-// export function find<T>(arr: T[], fn: (item: T) => boolean): T | undefined {
-//   return arr.find(fn);
-// }
+export function find<T>(arr: T[], fn: (item: T) => boolean): T | undefined {
+  return arr.find(fn);
+}
 
 // export function forEach<T>(arr: T[], fn: (item: T) => void): void {
 //   arr.forEach(fn);
