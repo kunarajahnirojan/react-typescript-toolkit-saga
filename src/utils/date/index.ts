@@ -184,12 +184,12 @@ export const getCurrentDateTime = (format = 'YYYY-MM-DD HH:mm:ss'): string => {
   return moment().format(format);
 };
 
-// export const addDaysToDate = (
-//   date: moment.Moment,
-//   days: number
-// ): moment.Moment => {
-//   return date.clone().add(days, 'days');
-// };
+export const addDaysToDate = (
+  date: moment.Moment,
+  days: number
+): moment.Moment => {
+  return date.clone().add(days, 'days');
+};
 
 // export const subtractDaysFromDate = (
 //   date: moment.Moment,
