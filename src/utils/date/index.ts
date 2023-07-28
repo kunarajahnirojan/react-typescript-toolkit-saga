@@ -307,19 +307,19 @@ export const areDatesEqual = (
   return moment(date1).isSame(moment(date2), 'day');
 };
 
-// export const getDatesBetween = (
-//   startDate: Date | string,
-//   endDate: Date | string
-// ): string[] => {
-//   const start = moment(startDate);
-//   const end = moment(endDate);
-//   const dates: string[] = [];
-//   while (start.isSameOrBefore(end, 'day')) {
-//     dates.push(start.format('DD-MM-YYYY'));
-//     start.add(1, 'day');
-//   }
-//   return dates;
-// };
+export const getDatesBetween = (
+  startDate: Date | string,
+  endDate: Date | string
+): string[] => {
+  const start = moment(startDate);
+  const end = moment(endDate);
+  const dates: string[] = [];
+  while (start.isSameOrBefore(end, 'day')) {
+    dates.push(start.format('DD-MM-YYYY'));
+    start.add(1, 'day');
+  }
+  return dates;
+};
 
 // export const addTimeToDate = (
 //   date: Date | string | undefined,
