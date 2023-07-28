@@ -234,9 +234,9 @@ export const getEndOfDay = (date: moment.Moment): moment.Moment => {
   return date.clone().endOf('day');
 };
 
-// export const getStartOfMonth = (date: moment.Moment): moment.Moment => {
-//   return date.clone().startOf('month');
-// };
+export const getStartOfMonth = (date: moment.Moment): moment.Moment => {
+  return date.clone().startOf('month');
+};
 
 // export const getEndOfMonth = (date: moment.Moment): moment.Moment => {
 //   return date.clone().endOf('month');
