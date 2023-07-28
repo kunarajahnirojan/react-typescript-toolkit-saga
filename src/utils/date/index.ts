@@ -292,20 +292,20 @@ export const isToday = (date: Date | string): boolean => {
   return moment(date).isSame(moment(), 'day');
 };
 
-// export const isFutureDate = (date: Date | string): boolean => {
-//   return moment(date).isAfter(moment(), 'day');
-// };
+export const isFutureDate = (date: Date | string): boolean => {
+  return moment(date).isAfter(moment(), 'day');
+};
 
-// export const isPastDate = (date: Date | string): boolean => {
-//   return moment(date).isBefore(moment(), 'day');
-// };
+export const isPastDate = (date: Date | string): boolean => {
+  return moment(date).isBefore(moment(), 'day');
+};
 
-// export const areDatesEqual = (
-//   date1: Date | string,
-//   date2: Date | string
-// ): boolean => {
-//   return moment(date1).isSame(moment(date2), 'day');
-// };
+export const areDatesEqual = (
+  date1: Date | string,
+  date2: Date | string
+): boolean => {
+  return moment(date1).isSame(moment(date2), 'day');
+};
 
 // export const getDatesBetween = (
 //   startDate: Date | string,
