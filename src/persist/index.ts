@@ -11,7 +11,7 @@ const persistConfig = {
     encryptTransform({
       secretKey,
       onError: (error: Error) => {
-        // Handle the error.
+        return null;
       },
     }),
   ],
