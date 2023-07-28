@@ -3,22 +3,22 @@ export const isArrayEmpty = <T>(arr: T[]): boolean => {
 };
 
 export const flattenArray = <T>(arr: T[][]): T[] => {
-  return [].concat(...arr);
+  return ([] as T[]).concat(...arr);
 };
 
-// export const sumArrayElements = (arr: number[]): number => {
-//   return arr.reduce((sum, current) => sum + current, 0);
-// };
+export const sumArrayElements = (arr: number[]): number => {
+  return arr.reduce((sum, current) => sum + current, 0);
+};
 
-// export const getUniqueValues = <T>(arr: T[]): T[] => {
-//   return Array.from(new Set(arr));
-// };
+export const getUniqueValues = <T>(arr: T[]): T[] => {
+  return Array.from(new Set(arr));
+};
 
-// export const getArrayAverage = (arr: number[]): number => {
-//   if (arr.length === 0) return 0;
-//   const sum = arr.reduce((acc, val) => acc + val, 0);
-//   return sum / arr.length;
-// };
+export const getArrayAverage = (arr: number[]): number => {
+  if (arr.length === 0) return 0;
+  const sum = arr.reduce((acc, val) => acc + val, 0);
+  return sum / arr.length;
+};
 
 // export const shuffleArray = <T>(arr: T[]): T[] => {
 //   const arrayCopy = [...arr];
