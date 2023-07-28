@@ -96,68 +96,68 @@ export function getDaysByMonth(
   );
 }
 
-/**
- * Get time ago like facebook. (ex: a day ago).
- */
-// export function getTimeDifference(date: Date | string): {
-//   count: number | null;
-//   tx: string;
-// } {
-//   const timeDifference = moment().diff(moment.utc(date).local(), 'seconds');
+// /**
+//  * Get time ago like facebook. (ex: a day ago).
+//  */
+export function getTimeDifference(date: Date | string): {
+  count: number | null;
+  tx: string;
+} {
+  const timeDifference = moment().diff(moment.utc(date).local(), 'seconds');
 
-//   const yearTime = 60 * 60 * 24 * 365;
+  const yearTime = 60 * 60 * 24 * 365;
 
-//   const monthTime = 60 * 60 * 24 * 30;
+  const monthTime = 60 * 60 * 24 * 30;
 
-//   const dayTime = 60 * 60 * 24;
+  const dayTime = 60 * 60 * 24;
 
-//   const hourTime = 60 * 60;
+  const hourTime = 60 * 60;
 
-//   const minutesTime = 60;
+  const minutesTime = 60;
 
-//   const yearCalculator = Math.floor(timeDifference / yearTime);
+  const yearCalculator = Math.floor(timeDifference / yearTime);
 
-//   const monthCalculator = Math.floor(timeDifference / monthTime);
+  const monthCalculator = Math.floor(timeDifference / monthTime);
 
-//   const dayCalculator = Math.floor(timeDifference / dayTime);
+  const dayCalculator = Math.floor(timeDifference / dayTime);
 
-//   const hourCalculator = Math.floor(timeDifference / hourTime);
+  const hourCalculator = Math.floor(timeDifference / hourTime);
 
-//   const minutesCalculator = Math.floor(timeDifference / minutesTime);
+  const minutesCalculator = Math.floor(timeDifference / minutesTime);
 
-//   switch (true) {
-//     case yearCalculator > 1:
-//       return { count: yearCalculator, tx: 'txYearsAgo' };
-//     case yearCalculator > 0:
-//       return { count: yearCalculator, tx: 'txYearAgo' };
+  switch (true) {
+    case yearCalculator > 1:
+      return { count: yearCalculator, tx: 'txYearsAgo' };
+    case yearCalculator > 0:
+      return { count: yearCalculator, tx: 'txYearAgo' };
 
-//     case monthCalculator > 1:
-//       return { count: monthCalculator, tx: 'txMonthsAgo' };
-//     case monthCalculator > 0:
-//       return { count: monthCalculator, tx: 'txMonthAgo' };
+    case monthCalculator > 1:
+      return { count: monthCalculator, tx: 'txMonthsAgo' };
+    case monthCalculator > 0:
+      return { count: monthCalculator, tx: 'txMonthAgo' };
 
-//     case dayCalculator > 1:
-//       return { count: dayCalculator, tx: 'txDaysAgo' };
-//     case dayCalculator > 0:
-//       return { count: dayCalculator, tx: 'txDayAgo' };
+    case dayCalculator > 1:
+      return { count: dayCalculator, tx: 'txDaysAgo' };
+    case dayCalculator > 0:
+      return { count: dayCalculator, tx: 'txDayAgo' };
 
-//     case hourCalculator > 1:
-//       return { count: hourCalculator, tx: 'txHoursAgo' };
-//     case hourCalculator > 0:
-//       return { count: hourCalculator, tx: 'txHourAgo' };
+    case hourCalculator > 1:
+      return { count: hourCalculator, tx: 'txHoursAgo' };
+    case hourCalculator > 0:
+      return { count: hourCalculator, tx: 'txHourAgo' };
 
-//     case minutesCalculator > 1:
-//       return { count: minutesCalculator, tx: 'txMinutesAgo' };
-//     case minutesCalculator > 0:
-//       return { count: minutesCalculator, tx: 'txMinuteAgo' };
+    case minutesCalculator > 1:
+      return { count: minutesCalculator, tx: 'txMinutesAgo' };
+    case minutesCalculator > 0:
+      return { count: minutesCalculator, tx: 'txMinuteAgo' };
 
-//     case timeDifference > 1:
-//       return { count: timeDifference, tx: 'txSecondsAgo' };
+    case timeDifference > 1:
+      return { count: timeDifference, tx: 'txSecondsAgo' };
 
-//     default:
-//       return { count: null, tx: 'txFewSecondsAgo' };
-//   }
-// }
+    default:
+      return { count: null, tx: 'txFewSecondsAgo' };
+  }
+}
 
 // export const dayBetweenRange = ({
 //   endDate,
