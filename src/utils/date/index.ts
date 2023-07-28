@@ -159,21 +159,21 @@ export function getTimeDifference(date: Date | string): {
   }
 }
 
-// export const dayBetweenRange = ({
-//   endDate,
-//   startDate,
-//   format = 'DD/MM/YYYY',
-// }: {
-//   startDate?: string;
-//   endDate?: string;
-//   format?: string;
-// }) => {
-//   const mStartDate = moment(startDate, format);
+export const dayBetweenRange = ({
+  endDate,
+  startDate,
+  format = 'DD/MM/YYYY',
+}: {
+  startDate?: string;
+  endDate?: string;
+  format?: string;
+}) => {
+  const mStartDate = moment(startDate, format);
 
-//   const mEndDate = moment(endDate, format);
+  const mEndDate = moment(endDate, format);
 
-//   return mEndDate.diff(mStartDate, 'days') + 1;
-// };
+  return mEndDate.diff(mStartDate, 'days') + 1;
+};
 
 // export const getDaysDifference = (date1: Date, date2: Date): number => {
 //   const timeDifference = date2.getTime() - date1.getTime();
