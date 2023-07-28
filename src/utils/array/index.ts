@@ -136,15 +136,15 @@ export function omit<T extends object, K extends keyof T>(
   return omittedObj;
 }
 
-// export function pick<T extends object, K extends keyof T>(
-//   obj: T,
-//   keys: K[]
-// ): Pick<T, K> {
-//   const pickedObj = {} as Pick<T, K>;
-//   keys.forEach((key) => {
-//     if (obj.hasOwnProperty(key)) {
-//       pickedObj[key] = obj[key];
-//     }
-//   });
-//   return pickedObj;
-// }
+export function pick<T extends object, K extends keyof T>(
+  obj: T,
+  keys: K[]
+): Pick<T, K> {
+  const pickedObj = {} as Pick<T, K>;
+  keys.forEach((key) => {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      pickedObj[key] = obj[key];
+    }
+  });
+  return pickedObj;
+}
