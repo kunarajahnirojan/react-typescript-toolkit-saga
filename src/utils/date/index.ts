@@ -276,21 +276,21 @@ export const isValidDate = (date: any): boolean => {
   return moment(date, 'YYYY-MM-DD', true).isValid();
 };
 
-// export const convertTimestampToDate = (timestamp: number): string => {
-//   return moment.unix(timestamp).format('DD-MM-YYYY');
-// };
+export const convertTimestampToDate = (timestamp: number): string => {
+  return moment.unix(timestamp).format('DD-MM-YYYY');
+};
 
-// export const getStartOfWeek = (date: Date | string | undefined): string => {
-//   return date ? moment(date).startOf('isoWeek').format('DD-MM-YYYY') : '----';
-// };
+export const getStartOfWeek = (date: Date | string | undefined): string => {
+  return date ? moment(date).startOf('isoWeek').format('DD-MM-YYYY') : '----';
+};
 
-// export const getEndOfWeek = (date: Date | string | undefined): string => {
-//   return date ? moment(date).endOf('isoWeek').format('DD-MM-YYYY') : '----';
-// };
+export const getEndOfWeek = (date: Date | string | undefined): string => {
+  return date ? moment(date).endOf('isoWeek').format('DD-MM-YYYY') : '----';
+};
 
-// export const isToday = (date: Date | string): boolean => {
-//   return moment(date).isSame(moment(), 'day');
-// };
+export const isToday = (date: Date | string): boolean => {
+  return moment(date).isSame(moment(), 'day');
+};
 
 // export const isFutureDate = (date: Date | string): boolean => {
 //   return moment(date).isAfter(moment(), 'day');
