@@ -2,18 +2,26 @@
 
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginRequest } from 'features/auth/authSlice';
+// import { loginRequest } from 'features/auth/authSlice';
+import { loadTitleRequest } from 'features/addons/addonSlice';
 
 const App = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const { titles } = useSelector((state: any) => state.addon);
+
+  console.log('====================================');
+  console.log(titles);
+  console.log('====================================');
 
   const dispatch = useDispatch();
   const { loading, error } = useSelector((state: any) => state.auth);
 
   const handleLogin = () => {
     debugger;
-    dispatch(loginRequest({ email, password }));
+    // dispatch(loginRequest({ email, password }));
+    dispatch(loadTitleRequest());
   };
 
   return (

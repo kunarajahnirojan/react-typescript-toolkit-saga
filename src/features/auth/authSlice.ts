@@ -28,10 +28,12 @@ const authSlice = createSlice({
       state,
       action: PayloadAction<{ email: string; password: string }>
     ) {
+      debugger;
       state.loading = true;
       state.error = null;
     },
     loginSuccess(state, action: PayloadAction<IUser>) {
+      debugger;
       state.loading = false;
       state.user = action.payload;
       state.error = null;

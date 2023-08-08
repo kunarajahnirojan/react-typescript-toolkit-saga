@@ -1,12 +1,14 @@
 import { takeLatest, put, call } from 'redux-saga/effects';
 import axios from 'axios';
-import { loginRequest, loginSuccess, loginFailure } from './authSlice';
 import { apiURL } from 'config';
+
+import { loginRequest, loginSuccess, loginFailure } from './authSlice';
 
 function* loginSaga(action: {
   type: string;
   payload: any;
 }): Generator<any, void, any> {
+  debugger;
   try {
     const response = yield call(axios.post, `${apiURL}/login`, action.payload);
     yield put(loginSuccess(response.data));
