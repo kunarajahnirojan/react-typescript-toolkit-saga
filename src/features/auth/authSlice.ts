@@ -2,21 +2,24 @@
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface IUser {
+export interface IAuth {
   id: number;
   name: string;
   email: string;
+  token: string;
 }
 
 interface AuthState {
   loading: boolean;
-  user: IUser | null;
+  auth: IAuth | null;
   error: string | null;
+  token: string | null;
 }
 
 const initialState: AuthState = {
   loading: false,
-  user: null,
+  auth: null,
+  token: null,
   error: null,
 };
 
@@ -32,20 +35,20 @@ const authSlice = createSlice({
       state.loading = true;
       state.error = null;
     },
-    loginSuccess(state, action: PayloadAction<IUser>) {
+    loginSuccess(state, action: PayloadAction<IAuth>) {
       debugger;
       state.loading = false;
-      state.user = action.payload;
+      state.auth = action.payload;
       state.error = null;
     },
     loginFailure(state, action: PayloadAction<string>) {
       state.loading = false;
-      state.user = null;
+      state.auth = null;
       state.error = action.payload;
     },
     logout(state) {
       state.loading = false;
-      state.user = null;
+      state.auth = null;
       state.error = null;
     },
   },
