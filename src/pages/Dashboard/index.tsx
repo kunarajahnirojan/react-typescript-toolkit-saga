@@ -1,41 +1,47 @@
-// import * as React from 'react';
+// src/App.js
 
-// // eslint-disable-next-line @typescript-eslint/no-empty-interface
-// export interface IIndexProps {}
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginRequest } from 'features/auth/authSlice';
 
-// export default function Index(props: IIndexProps) {
-//   return (
-//     <React.Fragment>
-//       <div className="grid grid-cols-2 gap-8">
-//         <div className="py-24">
-//           <div>
-//             <span className="px-6 py-[5px] rounded-full text-red-600 bg-red-100 font-semibold text-xs flex align-center w-max cursor-pointer">
-//               More than faster
-//               <img
-//                 alt="sample"
-//                 src="https://www.freepnglogos.com/images/strawberry-14949.html"
-//               />
-//             </span>
-//           </div>
-//           <div className="flex flex-col font-bold text-[60px]">
-//             <span>Groceries</span>
-//             <span>delivered in as </span>
-//             <span>
-//               little as{' '}
-//               <span className="font-normal text-red-500">2 hours</span>
-//             </span>
-//           </div>
-//         </div>
-//         <div>Groceries delivered in as little as 2 hours</div>
-//       </div>
-//     </React.Fragment>
-//   );
-// }
+const App = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-import React from 'react';
+  const dispatch = useDispatch();
+  const { loading, error } = useSelector((state: any) => state.auth);
 
-function Index() {
-  return <div>Index</div>;
-}
+  const handleLogin = () => {
+    debugger;
+    dispatch(loginRequest({ email, password }));
+  };
 
-export default Index;
+  return (
+    <div>
+      <div>
+        <input
+          type="text"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <div>
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
+      <div>
+        <button onClick={handleLogin} disabled={loading}>
+          {loading ? 'Logging in...' : 'Login'}
+        </button>
+      </div>
+      {error && <div>{error}</div>}
+    </div>
+  );
+};
+
+export default App;

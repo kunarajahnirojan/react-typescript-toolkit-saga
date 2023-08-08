@@ -1,24 +1,20 @@
-// import { takeLatest, put } from 'redux-saga/effects';
-// import axios from 'axios';
-// import { apiURL } from 'config';
-// import { loginSuccess } from './authSlice';
+import { takeLatest, put, call } from 'redux-saga/effects';
+import axios from 'axios';
+import { loginRequest, loginSuccess, loginFailure } from './authSlice';
+import { apiURL } from 'config';
 
-// function* loginSaga(action: {
-//   type: string;
-//   payload: any;
-// }): Generator<void, void, any> {
-//   try {
-//     const response = yield axios.post(apiURL, action.payload);
-//     yield put(loginSuccess(response.data));
-//     // Add other logic for handling the login success case
-//   } catch (error) {
-//     // Handle login failure here if needed
-//   }
-// }
+function* loginSaga(action: {
+  type: string;
+  payload: any;
+}): Generator<any, void, any> {
+  try {
+    const response = yield call(axios.post, `${apiURL}/login`, action.payload);
+    yield put(loginSuccess(response.data));
+  } catch (error: any) {
+    yield put(loginFailure(error.message));
+  }
+}
 
-// export function* authSaga() {
-//   yield takeLatest('types.LOGIN_SUCCESS', loginSaga);
-//   // Add other sagas if needed
-// }
-
-export {};
+export function* authSaga(): Generator<any, void, any> {
+  yield takeLatest(loginRequest.type, loginSaga);
+}

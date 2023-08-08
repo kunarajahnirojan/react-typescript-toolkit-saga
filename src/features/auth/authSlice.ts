@@ -1,48 +1,55 @@
+// src/store/auth/authSlice.ts
+
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-// Define your auth state interface
+export interface IUser {
+  id: number;
+  name: string;
+  email: string;
+}
+
 interface AuthState {
   loading: boolean;
-  token: string | null;
-  user: any | null; // Replace `any` with the actual user type
-  tokenType: string;
-  errors: string | null;
-
-  // Add other properties if needed
+  user: IUser | null;
+  error: string | null;
 }
 
 const initialState: AuthState = {
   loading: false,
-  token: null,
   user: null,
-  tokenType: 'Bearer',
-  errors: null,
-  // Initialize other properties if needed
+  error: null,
 };
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    loginSuccess: (
+    loginRequest(
       state,
-      action: PayloadAction<{ token: string; user: any }>
-    ) => {
-      state.loading = false;
-      state.token = action.payload.token;
-      state.user = action.payload.user;
+      action: PayloadAction<{ email: string; password: string }>
+    ) {
+      state.loading = true;
+      state.error = null;
     },
-
-    loginFailed: (state, action: PayloadAction<{ errors: string }>) => {
+    loginSuccess(state, action: PayloadAction<IUser>) {
       state.loading = false;
-      state.errors = action.payload.errors;
+      state.user = action.payload;
+      state.error = null;
     },
-
-    // Add other auth-related reducers here if needed
+    loginFailure(state, action: PayloadAction<string>) {
+      state.loading = false;
+      state.user = null;
+      state.error = action.payload;
+    },
+    logout(state) {
+      state.loading = false;
+      state.user = null;
+      state.error = null;
+    },
   },
 });
 
-// Export the auth action creators
-export const { loginSuccess, loginFailed } = authSlice.actions;
+export const { loginRequest, loginSuccess, loginFailure, logout } =
+  authSlice.actions;
 
 export default authSlice.reducer;

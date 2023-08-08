@@ -13,13 +13,13 @@ import persistConfig from 'persist';
 import createSagaMiddleware from 'redux-saga';
 
 //
-import rootReducers from './reducer';
+import rootReducer from './reducer';
 import { rootSaga } from './saga';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
-  reducer: persistReducer(persistConfig, rootReducers),
+  reducer: persistReducer(persistConfig, rootReducer),
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       thunk: false,

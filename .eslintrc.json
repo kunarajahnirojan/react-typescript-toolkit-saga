@@ -22,6 +22,9 @@
       "error",
       { "extensions": [".jsx", ".tsx"] }
     ],
+
+    "no-debugger": "off",
+
     "import/extensions": [
       "error",
       "ignorePackages",
