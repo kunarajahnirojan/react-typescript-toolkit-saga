@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { loginRequest } from 'features/auth/authSlice';
-import { loadTitleRequest } from 'features/addons/addonSlice';
+import { loginRequest } from 'features/auth/authSlice';
+// import { loadTitleRequest } from 'features/addons/addonSlice';
 
 const App = () => {
   const [email, setEmail] = useState('');
@@ -20,8 +20,8 @@ const App = () => {
 
   const handleLogin = () => {
     debugger;
-    // dispatch(loginRequest({ email, password }));
-    dispatch(loadTitleRequest());
+    dispatch(loginRequest({ email, password }));
+    // dispatch(loadTitleRequest());
   };
 
   return (

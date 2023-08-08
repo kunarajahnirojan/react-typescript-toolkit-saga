@@ -17,13 +17,11 @@ const addonSlice = createSlice({
   initialState,
   reducers: {
     loadTitleRequest: (state) => {
-      debugger;
       state.loading = true;
     },
-    loadTitleSuccess: (state, action: PayloadAction<string[]>) => {
-      debugger;
+    loadTitleSuccess: (state, action: PayloadAction<{ result: string[] }>) => {
       state.loading = false;
-      state.titles = action.payload;
+      state.titles = action.payload.result;
     },
     loadTitleFail: (state, action: PayloadAction<string[]>) => {
       state.loading = false;
