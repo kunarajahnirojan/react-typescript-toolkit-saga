@@ -1,9 +1,9 @@
 // src/App.js
 
 import React, { useState } from 'react';
+import { loadTitleRequest } from 'features/addons/addonSlice';
 import { useDispatch, useSelector } from 'react-redux';
 // import { loginRequest } from 'features/auth/authSlice';
-import { loadTitleRequest } from 'features/addons/addonSlice';
 
 const App = () => {
   const [email, setEmail] = useState('');
@@ -13,7 +13,7 @@ const App = () => {
 
   console.log('====================================');
   console.log(titles);
-  console.log('====================================');
+  console.log('====================dfdfd================');
 
   const dispatch = useDispatch();
   const { loading, error } = useSelector((state: any) => state.auth);
