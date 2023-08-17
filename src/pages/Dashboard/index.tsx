@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginRequest } from 'features/auth/authSlice';
-import { selectUser as useSelectUser } from 'selectors/auth';
+import { user as useSelectUser } from 'selectors/auth';
 
 const App = () => {
   const dispatch = useDispatch();

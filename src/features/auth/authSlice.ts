@@ -1,30 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import camelcaseKeys from 'camelcase-keys';
 
-export interface IAuth {
-  id: number;
-  name: string;
-  email: string;
-  token: string;
-  errors: string;
-  user: {
-    id: number;
-    name: string;
-    email: string;
-    role_id?: any | null;
-  };
-  permission: string[];
-  tokenType: string;
-}
+import { IAuth, IAuthState } from './types';
 
-interface AuthState {
-  loading: boolean;
-  auth: IAuth | null;
-  error: string | null;
-  tokenType: string | null;
-}
-
-const initialState: AuthState = {
+const initialState: IAuthState = {
   loading: false,
   auth: null,
   error: null,

@@ -2,9 +2,9 @@ import { createDraftSafeSelector } from '@reduxjs/toolkit';
 import jwtDecode from 'jwt-decode';
 import moment from 'moment';
 import { RootState } from 'store/reducer';
+import { IAccessToken } from 'features/auth/types';
 
 const auth = (state: RootState) => {
-  debugger;
   return state.auth.auth;
 };
 
@@ -21,7 +21,7 @@ export const tokenType = createDraftSafeSelector(
 );
 
 export const tokenExpiresIn = createDraftSafeSelector(accessToken, (token) =>
-  token ? jwtDecode<any>(token).exp : null
+  token ? jwtDecode<IAccessToken>(token).exp : null
 );
 
 export const accessTokenWithType = createDraftSafeSelector(
