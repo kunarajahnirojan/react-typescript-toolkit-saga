@@ -1,58 +1,44 @@
-// src/store/auth/authSelectors.ts
-
-import { createSelector } from '@reduxjs/toolkit';
-import jwtDecode, { JwtPayload } from 'jwt-decode';
+import { createDraftSafeSelector } from '@reduxjs/toolkit';
+import jwtDecode from 'jwt-decode';
 import moment from 'moment';
 import { RootState } from 'store/reducer';
 
-interface AuthState {
-  loading: boolean;
-  token: string | null;
-  user: IUser | null;
-  tokenType: string;
-  permission: string;
-}
+const auth = (state: RootState) => {
+  debugger;
+  return state.auth.auth;
+};
 
-export interface IUser {
-  id: number;
-  name: string;
-  email: string;
-  phoneNumber: number;
-  verified: boolean;
-}
-
-const auth = (state: RootState): AuthState => state.auth;
-
-export const accessToken = createSelector(auth, (state) => state.token);
-
-export const user = createSelector(auth, (state) => state.user);
-
-export const tokenType = createSelector(auth, (state) => state.tokenType);
-
-export const permission = createSelector(auth, (state) => state.permission);
-
-export const expiresIn = createSelector(accessToken, (token) => {
-  if (token) {
-    const decodedToken = jwtDecode<JwtPayload>(token);
-    return decodedToken.exp;
-  }
-  return null;
-});
-
-export const accessTokenWithType = createSelector(
-  [tokenType, accessToken],
-  (type, token) => {
-    return type && token ? `${type} ${token}` : null;
-  }
+export const accessToken = createDraftSafeSelector(
+  auth,
+  (state) => state?.token
 );
 
-export const isTokenValid = createSelector(expiresIn, (expires) => {
-  return expires ? moment.unix(expires).isSameOrAfter(moment()) : false;
-});
+export const user = createDraftSafeSelector(auth, (state) => state?.user);
 
-export const isAuthorized = createSelector(
+export const tokenType = createDraftSafeSelector(
+  auth,
+  (state) => state?.tokenType
+);
+
+export const tokenExpiresIn = createDraftSafeSelector(accessToken, (token) =>
+  token ? jwtDecode<any>(token).exp : null
+);
+
+export const accessTokenWithType = createDraftSafeSelector(
+  [tokenType, accessToken],
+  (type, token) => (type && token ? `${type} ${token}` : null)
+);
+
+export const isTokenValid = createDraftSafeSelector(tokenExpiresIn, (expires) =>
+  expires ? moment.unix(expires).isSameOrAfter(moment()) : false
+);
+
+export const isAuthorized = createDraftSafeSelector(
   [isTokenValid, user],
-  (valid, userObj) => {
-    return valid && userObj?.id !== undefined;
-  }
+  (valid, userObj) => valid && userObj?.id !== undefined
+);
+
+export const permission = createDraftSafeSelector(
+  auth,
+  (state) => state?.permission
 );

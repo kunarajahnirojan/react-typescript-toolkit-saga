@@ -7,7 +7,14 @@ export interface IAuth {
   email: string;
   token: string;
   errors: string;
-  user: object;
+  user: {
+    id: number;
+    name: string;
+    email: string;
+    role_id?: any | null;
+  };
+  permission: string[];
+  tokenType: string;
 }
 
 interface AuthState {

@@ -1,7 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
-  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -9,7 +8,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import persistConfig from 'persist';
 import createSagaMiddleware from 'redux-saga';
 import { createLogger } from 'redux-logger';
 
@@ -28,7 +26,7 @@ const loggerMiddleware = createLogger({
 });
 
 const store = configureStore({
-  reducer: persistReducer(persistConfig, rootReducer),
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       thunk: false,

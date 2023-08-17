@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginRequest } from 'features/auth/authSlice';
+import { selectUser as useSelectUser } from 'selectors/auth';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -8,10 +9,12 @@ const App = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const { loading, error, auth } = useSelector((state: any) => state.auth);
+  const { loading, error } = useSelector((state: any) => state.auth);
+
+  const selectUser = useSelector(useSelectUser);
 
   console.log('====================================');
-  console.log(auth);
+  console.log(selectUser);
   console.log('====================================');
 
   const handleLogin = () => {
