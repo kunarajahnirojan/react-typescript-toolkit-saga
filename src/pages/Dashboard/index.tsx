@@ -1,27 +1,18 @@
-// src/App.js
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { loginRequest } from 'features/auth/authSlice';
-import { loadTitleRequest } from 'features/addons/addonSlice';
+
+import { loginRequest } from 'features/auth/authSlice';
 
 const App = () => {
-  const [email, setEmail] = useState('');
+  const dispatch = useDispatch();
+
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const { titles } = useSelector((state: any) => state.addon);
-
-  console.log('====================================');
-  console.log(titles);
-  console.log('====================================');
-
-  const dispatch = useDispatch();
   const { loading, error } = useSelector((state: any) => state.auth);
 
   const handleLogin = () => {
-    debugger;
-    // dispatch(loginRequest({ email, password }));
-    dispatch(loadTitleRequest());
+    dispatch(loginRequest({ username, password }));
   };
 
   return (
@@ -30,8 +21,8 @@ const App = () => {
         <input
           type="text"
           placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
       </div>
       <div>
