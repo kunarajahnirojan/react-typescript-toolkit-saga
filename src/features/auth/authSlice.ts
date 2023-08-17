@@ -29,7 +29,7 @@ const authSlice = createSlice({
   reducers: {
     loginRequest(
       state,
-      action: PayloadAction<{ email: string; password: string }>
+      action: PayloadAction<{ username: string; password: string }>
     ) {
       debugger;
       state.loading = true;

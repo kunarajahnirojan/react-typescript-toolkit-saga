@@ -10,7 +10,7 @@ function* loginSaga(action: {
 }): Generator<any, void, any> {
   debugger;
   try {
-    const response = yield call(axios.post, `${apiURL}/login`, action.payload);
+    const response = yield call(axios.post, `${apiURL}logIn`, action.payload);
     yield put(loginSuccess(response.data));
   } catch (error: any) {
     yield put(loginFailure(error.message));
