@@ -1,26 +1,27 @@
-// src/store/auth/authSlice.ts
-
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import camelcaseKeys from 'camelcase-keys';
 
 export interface IAuth {
   id: number;
   name: string;
   email: string;
   token: string;
+  errors: string;
+  user: object;
 }
 
 interface AuthState {
   loading: boolean;
   auth: IAuth | null;
   error: string | null;
-  token: string | null;
+  tokenType: string | null;
 }
 
 const initialState: AuthState = {
   loading: false,
   auth: null,
-  token: null,
   error: null,
+  tokenType: 'Bearer',
 };
 
 const authSlice = createSlice({
@@ -31,24 +32,21 @@ const authSlice = createSlice({
       state,
       action: PayloadAction<{ username: string; password: string }>
     ) {
-      debugger;
       state.loading = true;
       state.error = null;
     },
     loginSuccess(state, action: PayloadAction<IAuth>) {
-      debugger;
       state.loading = false;
-      state.auth = action.payload;
       state.error = null;
+      state.auth = camelcaseKeys({ ...action.payload });
     },
+
     loginFailure(state, action: PayloadAction<string>) {
       state.loading = false;
-      state.auth = null;
       state.error = action.payload;
     },
     logout(state) {
       state.loading = false;
-      state.auth = null;
       state.error = null;
     },
   },

@@ -8,7 +8,6 @@ function* loginSaga(action: {
   type: string;
   payload: any;
 }): Generator<any, void, any> {
-  debugger;
   try {
     const response = yield call(axios.post, `${apiURL}logIn`, action.payload);
     yield put(loginSuccess(response.data));

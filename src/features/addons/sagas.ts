@@ -10,8 +10,6 @@ import {
 } from './addonSlice';
 
 function* fetchTitles() {
-  debugger;
-
   const headers = {
     Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBleGFtcGxlLmNvbSIsImp0aSI6Ijk4N2IxYTExLWVkNzYtNGFiYi05YWExLWY2YWY0NDY2NDY3YSIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJ1c2VyTmFtZSI6InN5c2FkbWluIiwiaWQiOiIxIiwibmJmIjoxNjkxNDg5Njg2LCJleHAiOjE2OTM1NjMyODYsImlhdCI6MTY5MTQ4OTY4Nn0.Ey5xa-lWZLrLUEHKjBH52StLm79SOF77kMt8mRfm1pw`,
   };

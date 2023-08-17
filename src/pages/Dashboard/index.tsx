@@ -8,7 +8,11 @@ const App = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const { loading, error } = useSelector((state: any) => state.auth);
+  const { loading, error, auth } = useSelector((state: any) => state.auth);
+
+  console.log('====================================');
+  console.log(auth);
+  console.log('====================================');
 
   const handleLogin = () => {
     dispatch(loginRequest({ username, password }));
