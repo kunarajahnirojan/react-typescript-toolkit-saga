@@ -1,6 +1,5 @@
 import { takeLatest, put, call } from 'redux-saga/effects';
 import axios from 'lib/axios';
-import { apiURL } from 'config';
 
 //
 import {
@@ -11,7 +10,7 @@ import {
 
 function* fetchTitles() {
   try {
-    const { data } = yield call(axios.get, `${apiURL}title`);
+    const { data } = yield call(axios.get, 'title');
     yield put(loadTitleSuccess(data));
   } catch (error: any) {
     yield put(loadTitleFail(error.message));

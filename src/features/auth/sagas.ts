@@ -1,5 +1,5 @@
 import { takeLatest, put, call } from 'redux-saga/effects';
-import axios from 'axios';
+import axios from 'lib/axios';
 import { apiURL } from 'config';
 
 import { loginRequest, loginSuccess, loginFailure } from './authSlice';
