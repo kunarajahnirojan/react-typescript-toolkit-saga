@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 import { apiURL } from 'config';
 import { accessTokenWithType } from 'selectors/auth';
 
@@ -10,11 +10,6 @@ const instance = axios.create({
     'Access-Control-Allow-Origin': '*',
   },
 });
-
-interface CustomAxiosConfig extends Omit<AxiosRequestConfig, 'headers'> {
-  useAuth?: boolean;
-  headers?: Record<string, string>;
-}
 
 export function createAxios({ getState }: { getState: any }) {
   instance.interceptors.request.use(

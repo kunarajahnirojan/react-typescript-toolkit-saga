@@ -15,10 +15,7 @@ export const accessToken = createDraftSafeSelector(
 
 export const user = createDraftSafeSelector(auth, (state) => state?.user);
 
-export const tokenType = createDraftSafeSelector(
-  auth,
-  (state) => state?.tokenType
-);
+export const tokenType = createDraftSafeSelector(auth, (state) => 'Bearer');
 
 export const tokenExpiresIn = createDraftSafeSelector(accessToken, (token) =>
   token ? jwtDecode<IAccessToken>(token).exp : null
