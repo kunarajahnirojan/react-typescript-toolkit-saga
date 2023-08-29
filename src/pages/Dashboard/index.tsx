@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { loadTitleRequest } from 'features/addons/addonSlice';
+import { loginRequest } from 'features/auth/authSlice';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -8,6 +9,17 @@ const App = () => {
   useEffect(() => {
     dispatch(loadTitleRequest());
   }, [dispatch]);
+
+  const handleLogin = async () => {
+    const response = await dispatch(
+      loginRequest({ username: 'sysadmin', password: 'secret' })
+    );
+
+    console.log('====================================');
+    console.log(response, 'response');
+
+    console.log('====================================');
+  };
 
   return (
     <div>
@@ -18,7 +30,7 @@ const App = () => {
         <input type="password" placeholder="Password" />
       </div>
       <div>
-        <button>Logging in...</button>
+        <button onClick={() => handleLogin()}>Logging in...</button>
       </div>
     </div>
   );

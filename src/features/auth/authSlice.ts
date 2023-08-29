@@ -24,7 +24,8 @@ const authSlice = createSlice({
     loginSuccess(state, action: PayloadAction<IAuth>) {
       state.loading = false;
       state.error = null;
-      state.auth = camelcaseKeys({ ...action.payload });
+      camelcaseKeys({ ...action.payload });
+      //  state.auth = camelcaseKeys({ ...action.payload });
     },
 
     loginFailure(state, action: PayloadAction<string>) {
