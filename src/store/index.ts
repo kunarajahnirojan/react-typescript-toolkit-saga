@@ -10,6 +10,7 @@ import {
 } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import { createLogger } from 'redux-logger';
+import { createAxios } from 'lib/axios';
 
 //
 import rootReducer from './reducer';
@@ -39,5 +40,6 @@ sagaMiddleware.run(rootSaga);
 export type State = ReturnType<typeof store.getState>;
 
 export const persistor = persistStore(store);
+createAxios(store);
 
 export default store;

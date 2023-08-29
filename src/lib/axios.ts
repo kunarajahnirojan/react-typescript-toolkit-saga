@@ -16,10 +16,9 @@ export function createAxios({ getState }: { getState: any }) {
     (config: any) => {
       const { useAuth, ...headers } = config.headers;
 
-      if (useAuth !== false) {
-        const state = getState();
-        headers.Authorization = accessTokenWithType(state);
-      }
+      const state = getState();
+      headers.Authorization = accessTokenWithType(state);
+
       return { ...config, headers };
     },
     (error) => {
