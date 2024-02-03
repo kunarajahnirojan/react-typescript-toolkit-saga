@@ -28,14 +28,18 @@ const loggerMiddleware = createLogger({
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
+  middleware: (getDefaultMiddleware) => {
+    const middleware = getDefaultMiddleware({
       thunk: false,
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat([sagaMiddleware, loggerMiddleware]),
+    }) as any[];
+
+    return middleware.concat([sagaMiddleware, loggerMiddleware]);
+  },
 });
+
 sagaMiddleware.run(rootSaga);
 export type State = ReturnType<typeof store.getState>;
 
