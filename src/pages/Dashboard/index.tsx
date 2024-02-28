@@ -1,39 +1,15 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { loadTitleRequest } from 'features/addons/addonSlice';
-import { loginRequest } from 'features/auth/authSlice';
+import React from 'react';
 
-const App = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(loadTitleRequest());
-  }, [dispatch]);
-
-  const handleLogin = async () => {
-    const response = await dispatch(
-      loginRequest({ username: 'sysadmin', password: 'secret' })
-    );
-
-    console.log('====================================');
-    console.log(response, 'dfdfdfd');
-
-    console.log('====================================');
-  };
-
+function Index() {
   return (
     <div>
-      <div>
-        <input type="text" placeholder="Email" />
-      </div>
-      <div>
-        <input type="password" placeholder="Password" />
-      </div>
-      <div>
-        <button onClick={() => handleLogin()}>Logging in...</button>
-      </div>
+      <section>
+        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 h-[60vh]">
+          Dashboard
+        </div>
+      </section>
     </div>
   );
-};
+}
 
-export default App;
+export default Index;
